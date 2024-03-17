@@ -1,0 +1,102 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} UI Tables {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header card-header-primary">
+                <h4 class="card-title">Nouvelles Données</h4>
+                <p class="card-category">Echantillon incrementale</p>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead class="text-primary">
+                            <th>ID</th>
+                            <th>Time</th>
+                            <th>V1</th>
+                            <th>V2</th>
+                            <th>V3</th>
+                            <th>V4</th>
+                            <th>V5</th>
+                            <th>V6</th>
+                            <th>V7</th>
+                            <th>V8</th>
+                            <th>V9</th>
+                            <th>V10</th>
+                            <th>V11</th>
+                            <th>V12</th>
+                            <th>V13</th>
+                            <th>V14</th>
+                            <th>V15</th>
+                            <th>V16</th>
+                            <th>V17</th>
+                            <th>V18</th>
+                            <th>V19</th>
+                            <th>V20</th>
+                            <th>V21</th>
+                            <th>V22</th>
+                            <th>V23</th>
+                            <th>V24</th>
+                            <th>V25</th>
+                            <th>V26</th>
+                            <th>V27</th>
+                            <th>V28</th>
+                            <th>Amount</th>
+                            <th>Class</th>
+                        </thead>
+                        <tbody>
+                            {% for f in f %}
+                                <tr>
+                                    <td>{{ f.id }}</td>
+                                    <td>{{ f.Time }}</td>
+                                    <td>{{ f.V1 }}</td>
+                                    <td>{{ f.V2 }}</td>
+                                    <td>{{ f.V3 }}</td>
+                                    <td>{{ f.V4 }}</td>
+                                    <td>{{ f.V5 }}</td>
+                                    <td>{{ f.V6 }}</td>
+                                    <td>{{ f.V7 }}</td>
+                                    <td>{{ f.V8 }}</td>
+                                    <td>{{ f.V9 }}</td>
+                                    <td>{{ f.V10 }}</td>
+                                    <td>{{ f.V11 }}</td>
+                                    <td>{{ f.V12 }}</td>
+                                    <td>{{ f.V13 }}</td>
+                                    <td>{{ f.V14 }}</td>
+                                    <td>{{ f.V15 }}</td>
+                                    <td>{{ f.V16 }}</td>
+                                    <td>{{ f.V17 }}</td>
+                                    <td>{{ f.V18 }}</td>
+                                    <td>{{ f.V19 }}</td>
+                                    <td>{{ f.V20 }}</td>
+                                    <td>{{ f.V21 }}</td>
+                                    <td>{{ f.V22 }}</td>
+                                    <td>{{ f.V23 }}</td>
+                                    <td>{{ f.V24 }}</td>
+                                    <td>{{ f.V25 }}</td>
+                                    <td>{{ f.V26 }}</td>
+                                    <td>{{ f.V27 }}</td>
+                                    <td>{{ f.V28 }}</td>
+                                    <td>{{ f.Amount }}</td>
+                                    <td>{{ f.Class }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

@@ -1,0 +1,109 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Login {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+  <div class="row">
+    <div class="col-md-5">
+      <div class="card">
+        <div class="card-header card-header-primary">
+          <h4 class="card-title">
+            Creer un compte
+          </h4>
+        </div>
+        <div class="card-body">
+
+          <h6 class="card-category">
+              {% if msg %}
+                <span class="text-danger">{{ msg | safe }}</span>
+              {% else %}
+                Ajouter un compte professionnel
+              {% endif %}  
+          </h6>
+          
+          <br />
+
+          {% if success %}
+
+            <p class="">
+              Svp <a href="{% url 'login' %}" class="text-black text-small">authentication</a> avec le nouveau compte.
+            </p>  
+
+          {% else %}
+            <form role="form" method="post" action="">
+                
+              {% csrf_token %} 
+
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label class="bmd-label-floating">Nom Utilisateur</label>
+                    {{ form.username }}
+                  </div>
+                </div>
+              </div>
+              <span class="text-danger">{{ form.username.errors }}</span>
+
+              <br />
+
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label class="bmd-label-floating">Email</label>
+                    {{ form.email }}
+                  </div>
+                </div>
+              </div>
+              <span class="text-danger">{{ form.email.errors }}</span>
+
+              <br />
+
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label class="bmd-label-floating">Mot de passe</label>
+                    {{ form.password1 }}
+                  </div>
+                </div>
+              </div>
+              <span class="text-danger">{{ form.password1.errors }}</span>
+
+              <br />
+
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label class="bmd-label-floating">Repeter le Mot de passe</label>
+                    {{ form.password2 }}
+                  </div>
+                </div>
+              </div>
+              <span class="text-danger">{{ form.password2.errors }}</span>
+
+              <br />
+
+              <button type="submit" name="register" class="btn btn-primary pull-left">Register</button>
+
+
+              <span class="pull-right">
+                Avez-vous un compte? <a href="{% url 'login' %}" class="text-primary">Login</a>
+              </span>
+
+              <div class="clearfix"></div>
+
+            </form>
+          {% endif %}
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}
